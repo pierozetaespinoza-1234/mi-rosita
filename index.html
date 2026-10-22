@@ -1,370 +1,478 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MI ROSITA 💙</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <title>MI ROSITA 💙</title>
 
-html {
-  scroll-behavior: smooth;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: Georgia, serif;
-  background: linear-gradient(180deg, #020817, #071b42, #102d65);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-section {
-  padding: 80px 20px;
-}
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        #020b20,
+        #073b78,
+        #087ca7,
+        #03132f
+      );
+      background-size: 300% 300%;
+      animation: fondo 15s ease infinite;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-h1, h2 {
-  color: #a9dcff;
-  text-shadow: 0 0 18px #238bff;
-  margin-bottom: 25px;
-}
+    @keyframes fondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-h1 {
-  font-size: clamp(2.7rem, 8vw, 5rem);
-}
+    header {
+      text-align: center;
+      padding: 75px 20px 55px;
+    }
 
-h2 {
-  font-size: 2.2rem;
-}
+    .etiqueta {
+      color: #bceaff;
+      letter-spacing: 5px;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
 
-p {
-  line-height: 1.8;
-}
+    h1 {
+      font-size: clamp(42px, 9vw, 76px);
+      color: #ffffff;
+      text-shadow: 0 0 25px #61caff;
+      margin-bottom: 22px;
+      animation: aparecer 2s ease;
+    }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 30px 20px;
-}
+    .subtitulo {
+      font-size: clamp(17px, 4vw, 23px);
+      color: #d7f3ff;
+      line-height: 1.8;
+      max-width: 650px;
+      margin: auto;
+    }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #d5eaff;
-  margin-bottom: 30px;
-}
+    .corazon {
+      font-size: 45px;
+      margin-top: 25px;
+      animation: latido 1.5s infinite;
+    }
 
-button {
-  border: 1px solid #9bd5ff;
-  background: linear-gradient(135deg, #1677ff, #72c7ff);
-  color: #06132c;
-  padding: 14px 25px;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 10px;
-  transition: transform .3s, box-shadow .3s;
-}
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
 
-button:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 25px #45aaff;
-}
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.glow {
-  animation: glow 3s infinite alternate;
-}
+    section {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 35px 0 60px;
+    }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #278cff; }
-  to { text-shadow: 0 0 35px #b6e7ff, 0 0 60px #278cff; }
-}
+    .titulo-seccion {
+      text-align: center;
+      color: #d8f4ff;
+      font-size: clamp(28px, 5vw, 40px);
+      margin-bottom: 18px;
+      text-shadow: 0 0 15px #41bfff;
+    }
 
-.star {
-  position: fixed;
-  top: -30px;
-  color: #a9dcff;
-  pointer-events: none;
-  z-index: 5;
-  animation: fall linear forwards;
-}
+    .introduccion {
+      text-align: center;
+      color: #d5eaff;
+      line-height: 1.8;
+      margin: 0 auto 35px;
+      max-width: 650px;
+    }
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
+    .carta {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid rgba(184, 229, 255, 0.4);
+      border-radius: 22px;
+      background: rgba(4, 24, 59, 0.65);
+      box-shadow: 0 0 30px rgba(75, 184, 255, 0.15);
+      text-align: center;
+      line-height: 2;
+      color: #e6f7ff;
+      font-size: 17px;
+    }
 
-.card {
-  background: rgba(19, 54, 105, .45);
-  border: 1px solid rgba(147, 207, 255, .35);
-  border-radius: 22px;
-  padding: 25px;
-  margin: 18px auto;
-  max-width: 700px;
-  box-shadow: 0 0 25px rgba(27, 125, 255, .12);
-  backdrop-filter: blur(8px);
-}
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 30px auto;
-}
+    .photo {
+      overflow: hidden;
+      border-radius: 20px;
+      padding: 12px;
+      background: rgba(3, 20, 52, 0.8);
+      border: 1px solid rgba(178, 227, 255, 0.45);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.photo {
-  background: rgba(255, 255, 255, .07);
-  border: 1px solid #478ed6;
-  border-radius: 18px;
-  padding: 12px;
-  transition: transform .3s, box-shadow .3s;
-}
+    .photo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(113, 208, 255, 0.4);
+    }
 
-.photo:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 0 25px #176fc4;
-}
+    .photo img {
+      display: block;
+      width: 100%;
+      height: 320px;
+      object-fit: contain;
+      background: #06172e;
+      border-radius: 13px;
+    }
 
-.photo img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 12px;
-  background: #102b52;
-}
+    .photo p {
+      color: #d9f2ff;
+      text-align: center;
+      padding: 18px 8px 10px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
 
-.photo p {
-  padding: 15px 5px 5px;
-  color: #e2f2ff;
-}
+    .musica {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(2, 19, 48, 0.75);
+      border: 1px solid rgba(178, 227, 255, 0.45);
+      box-shadow: 0 0 30px rgba(75, 184, 255, 0.15);
+    }
 
-.song {
-  max-width: 650px;
-  margin: 25px auto;
-}
+    .nota-musical {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
 
-.song iframe {
-  width: 100%;
-  height: 180px;
-  border: 0;
-  border-radius: 15px;
-}
+    .musica p {
+      color: #d9f2ff;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
 
-.hidden {
-  display: none;
-}
+    .video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 14px;
+    }
 
-footer {
-  padding: 35px 20px;
-  background: rgba(0, 0, 0, .2);
-  color: #b8ddff;
-}
+    .boton {
+      display: inline-block;
+      border: 1px solid #bceaff;
+      border-radius: 30px;
+      padding: 13px 24px;
+      color: #ffffff;
+      background: #075b9b;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
 
-#letter {
-  animation: appear .8s ease;
-}
+    .boton:hover {
+      background: #1287c8;
+    }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .sorpresa {
+      text-align: center;
+    }
 
-@media (max-width: 500px) {
-  section { padding: 60px 15px; }
-  .photo img { height: 230px; }
-}
-</style>
+    #mensajeSorpresa {
+      display: none;
+      margin: 25px auto 0;
+      max-width: 650px;
+      padding: 25px;
+      background: rgba(3, 20, 52, 0.85);
+      border: 1px solid #9cddff;
+      border-radius: 20px;
+      line-height: 2;
+      color: #e6f7ff;
+      animation: aparecer 1s ease;
+    }
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      color: #c3e9ff;
+      background: rgba(0, 8, 28, 0.5);
+      line-height: 2;
+    }
+
+    .brillo {
+      color: #9ee4ff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 55px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .photo img {
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+      }
+
+      .carta {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="hero" id="inicio">
-  <h1 class="glow">MI ROSITA 💙</h1>
+  <header>
+    <p class="etiqueta">UN LUGAR ESPECIAL PARA TI</p>
 
-  <p class="subtitle">
-    Un pequeño universo creado especialmente para ti.
-  </p>
+    <h1>MI ROSITA 💙</h1>
 
-  <button onclick="abrirCarta()">💌 Abrir mi regalo</button>
-
-  <div id="letter" class="card hidden">
-    <h2>Para ti, mi amor</h2>
-    <p>
-      Si pudieras mirar por un instante dentro de mi corazón,
-      descubrirías cuánto cariño despiertas en mí.
-      Tu sonrisa tiene una forma muy especial de iluminar mis días,
-      y tu mirada consigue hacer inolvidables los momentos más sencillos.
-      Esta pequeña página es un regalo para recordarte lo especial
-      que eres para mí. Te quiero muchísimo, Rosita. 💙
-    </p>
-  </div>
-
-  <p style="margin-top:35px">✦ Desliza despacito, amor ✦</p>
-</section>
-
-<section id="mensajes">
-  <h2>💌 Unas palabras para ti</h2>
-
-  <div class="card">
-    <p>Tu sonrisa tiene esa magia que hace bonito hasta un día cualquiera. 💙</p>
-  </div>
-
-  <div class="card">
-    <p>Amor, contigo hasta las mariposas parecen tener su propia canción. 🦋</p>
-  </div>
-
-  <div class="card">
-    <p>De todas las cosas bonitas que me pasan, conocerte es una de mis favoritas. 🌹</p>
-  </div>
-
-  <div class="card">
-    <p>Qué bonito es tener a alguien que convierte pequeños instantes en grandes recuerdos. ✨</p>
-  </div>
-
-  <button onclick="nuevoMensaje()">💙 Regálame otro mensajito</button>
-
-  <div id="mensajeNuevo" class="card hidden"></div>
-</section>
-
-<section id="galeria">
-  <h2>📸 Nuestros recuerdos</h2>
-
-  <p style="color:#c8e6ff">
-    Cada fotografía guarda un pedacito de lo bonito que compartimos.
-  </p>
-
-  <div class="gallery">
-
-    <div class="photo">
-      <img src="WhatsApp Image 2026-10-21 at 18.26.18.jpeg" alt="Nuestro recuerdo 1">
-      <p>Tu sonrisa es una de mis formas favoritas de felicidad. 💙</p>
-    </div>
-
-    <div class="photo">
-      <img src="r3.jpeg" alt="Nuestro recuerdo 2">
-      <p>Hay momentos que quisiera guardar un poquito más. 🫶</p>
-    </div>
-
-    <div class="photo">
-      <img src="r4.jpeg" alt="Nuestro recuerdo 3">
-      <p>Mi linda ñañita , qué bonito es tener recuerdos contigo. 🌹</p>
-    </div>
-
-    <div class="photo">
-      <img src="r5.jpeg" alt="Nuestro recuerdo 4">
-      <p>Una fotografía, mil emociones y muchísimo cariño. ✨</p>
-    </div>
-
-  </div>
-
-  <p style="color:#a9dcff">
-    💌 cada recuerdo lo guardo en lo profundo de mi memoria.
-  </p>
-</section>
-
-<section id="src="https://www.youtube-nocookie.com/embed/VIDEO_ID"">
-  <h2>🎵 Nuestra canción</h2>
-
-  <div class="card">
-    <p>
-      Hay canciones que se escuchan y otras que nos hacen sentir.
-      Esta sección es para esa canción que tiene un significado
-      especial para nosotros. 💙
+    <p class="subtitulo">
+      Para la persona que hace más bonitos mis días
+      y llena de alegría mis recuerdos.
     </p>
 
-    <div class="song">
+    <div class="corazon">💙</div>
+  </header>
+
+  <section>
+    <h2 class="titulo-seccion">Unas palabras para ti 💌</h2>
+
+    <div class="carta">
+      Amor, quiero que sepas que tu sonrisa tiene una manera
+      especial de alegrarme el día y que tu mirada siempre
+      consigue despertar esas mariposas que siento por ti.
+
+      <br><br>
+
+      Cada momento contigo se convierte en un recuerdo
+      que guardo con mucho cariño. No necesito una ocasión
+      especial para recordarte lo importante que eres para mí.
+
+      <br><br>
+
+      Esta pequeña página es un detalle hecho con mucho
+      cariño para ti, mi Rosita. 💙🌹
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2 class="titulo-seccion">Nuestros recuerdos 📸</h2>
+
+    <p class="introduccion">
+      Siete fotografías, siete pequeños recuerdos
+      y un cariño que quiero seguir compartiendo contigo.
+    </p>
+
+    <div class="galeria">
+
+      <div class="photo">
+        <img
+          src="rosa1.jpeg"
+          alt="Nuestro recuerdo 1"
+          loading="lazy"
+        >
+        <p>
+          Tu sonrisa tiene el bonito poder de alegrarme el día. 💙
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="rosa2.jpeg"
+          alt="Nuestro recuerdo 2"
+          loading="lazy"
+        >
+        <p>
+          Hay momentos sencillos que se vuelven inolvidables contigo. 🌹
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="r3.jpeg"
+          alt="Nuestro recuerdo 3"
+          loading="lazy"
+        >
+        <p>
+          Un recuerdo bonito que siempre me saca una sonrisa. ✨
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="r4.jpeg"
+          alt="Nuestro recuerdo 4"
+          loading="lazy"
+        >
+        <p>
+          Mi amor, qué bonito es tener recuerdos contigo. 🌹
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="r5.jpeg"
+          alt="Nuestro recuerdo 5"
+          loading="lazy"
+        >
+        <p>
+          Una fotografía, mil emociones y muchísimo cariño. 💙
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="r6.jpeg"
+          alt="Nuestro recuerdo 6"
+          loading="lazy"
+        >
+        <p>
+          Contigo, hasta los momentos sencillos se vuelven especiales. 💌
+        </p>
+      </div>
+
+      <div class="photo">
+        <img
+          src="WhatsApp%20Image%202026-10-21%20at%2018.26.18.jpeg"
+          alt="Nuestro recuerdo 7"
+          loading="lazy"
+        >
+        <p>
+          Y cada foto me recuerda lo bonito que es compartir
+          momentos contigo. 💙
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="musica">
+    <h2 class="titulo-seccion">Nuestra canción 🎶</h2>
+
+    <p class="introduccion">
+      Hay canciones que expresan sentimientos
+      que a veces las palabras no consiguen explicar.
+    </p>
+
+    <div class="musica">
+      <div class="nota-musical">🎵💙</div>
+
+      <h3>La Melodía</h3>
+
+      <p>
+        Joey Montana<br>
+        Una canción especial para acompañar este recuerdo.
+      </p>
+
       <iframe
-        src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
-        title="Nuestra canción"
+        class="video"
+        src="https://www.youtube-nocookie.com/embed/6b5zSAZKBB8"
+        title="Joey Montana - La Melodía"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+        allowfullscreen
+      ></iframe>
+
+      <p style="margin-top: 15px;">
+        Pulsa reproducir para escuchar nuestra canción. 💙
+      </p>
     </div>
+  </section>
 
-    <p>🎶 Una melodía, muchos recuerdos y tú en mis pensamientos.</p>
-  </div>
-</section>
+  <section class="sorpresa">
+    <h2 class="titulo-seccion">Tengo algo para ti 💌</h2>
 
-<section id="sorpresa">
-  <h2>✨ Una sorpresa para ti</h2>
-
-  <p>Amor, hay algo más que quiero decirte...</p>
-
-  <button onclick="mostrarSorpresa()">💙 Descubrir sorpresa</button>
-
-  <div id="sorpresaTexto" class="card hidden">
-    <h2>Mi querida Rosita 🌹</h2>
-    <p>
-      No necesito una fecha especial para recordarte cuánto te quiero.
-      Me basta pensar en tu sonrisa para sentir esa emoción tan bonita
-      que provocas en mí.
-      Gracias por formar parte de mis días y de tantos pensamientos
-      bonitos. Ojalá esta pequeña página te saque una sonrisa,
-      porque fue creada pensando en ti. 💙
+    <p class="introduccion">
+      Hay un mensajito más que quiero compartir contigo.
     </p>
-  </div>
-</section>
 
-<footer>
-  <p>Hecho con cariño, especialmente para mi Rosita. 💙</p>
-  <p>Una pequeña página, un cariño enorme. ✨</p>
-</footer>
+    <button
+      class="boton"
+      type="button"
+      onclick="mostrarSorpresa()"
+    >
+      Abrir mi mensajito 💙
+    </button>
 
-<script>
-function abrirCarta() {
-  document.getElementById("letter").classList.toggle("hidden");
-}
+    <div id="mensajeSorpresa">
+      <h3>Para mi Rosita 🌹</h3>
 
-const mensajes = [
-  "Amor, tu mirada tiene una forma muy bonita de quedarse en mis pensamientos. 💙",
-  "Si hoy sonríes, espero que una pequeña parte de esa sonrisa sea por mí. 🌹",
-  "Me encanta esa emoción que aparece en mí cada vez que pienso en ti. 🦋",
-  "Rosita, eres protagonista de muchos de mis pensamientos bonitos. ✨",
-  "A veces una sola persona consigue hacer especial un día entero. Para mí, tú eres esa persona. 💌"
-];
+      <p>
+        Amor, no hace falta que el día sea perfecto
+        para encontrar algo bonito en él.
+        A veces basta con recordar tu sonrisa,
+        escuchar tu voz o pensar en un momento compartido
+        para que todo se sienta un poquito mejor.
 
-function nuevoMensaje() {
-  const caja = document.getElementById("mensajeNuevo");
-  const indice = Math.floor(Math.random() * mensajes.length);
-  caja.textContent = mensajes[indice];
-  caja.classList.remove("hidden");
-}
+        <br><br>
 
-function mostrarSorpresa() {
-  document.getElementById("sorpresaTexto").classList.toggle("hidden");
-}
+        Gracias por formar parte de tantos recuerdos
+        que me hacen sonreír. Espero que esta pequeña
+        sorpresa también consiga alegrarte el día.
 
-function crearEstrella() {
-  const estrella = document.createElement("span");
-  estrella.className = "star";
-  estrella.textContent = Math.random() > 0.5 ? "♡" : "✦";
-  estrella.style.left = Math.random() * 100 + "vw";
-  estrella.style.fontSize = (12 + Math.random() * 20) + "px";
-  estrella.style.animationDuration = (4 + Math.random() * 5) + "s";
+        <br><br>
 
-  document.body.appendChild(estrella);
+        Con mucho cariño, para ti. 💙
+      </p>
+    </div>
+  </section>
 
-  setTimeout(() => estrella.remove(), 9500);
-}
+  <footer>
+    <p>Hecho con mucho cariño para mi Rosita 💙🌹</p>
+    <p class="brillo">MI ROSITA · Un pequeño rincón de nuestros recuerdos</p>
+  </footer>
 
-setInterval(crearEstrella, 450);
-</script>
+  <script>
+    function mostrarSorpresa() {
+      const mensaje = document.getElementById("mensajeSorpresa");
+
+      if (mensaje.style.display === "block") {
+        mensaje.style.display = "none";
+      } else {
+        mensaje.style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
-```
-
